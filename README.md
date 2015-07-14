@@ -23,7 +23,7 @@ $('#my-table').edittr({editText:'Edito',saveText:'Savio',cancelText:'Fin'});
 ```
 Defaults are "Edit", "Save" and "Cancel".
 
-###Callback
+###Callbacks
 
 The Edit, Save and Cancel actions have their own callbacks: `onEdit`, `onSave` and `onCancel`.
 
