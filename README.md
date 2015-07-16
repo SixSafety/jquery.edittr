@@ -44,7 +44,7 @@ $('#my-table').edittr({
 
 ### Version 0.0.2: Patio 
 
-* Expand Jasmine tests
+* Fix and expand Jasmine tests
 
 ##Contributing
 
