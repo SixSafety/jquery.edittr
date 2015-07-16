@@ -48,22 +48,55 @@ describe("Options", function() {
     });
 
 		it("should custom values for cancelText, editText and saveText", function() {
+      expect($("a.cancel")).toHaveText("Fuggedit");
+      expect($("a.edit")).toHaveText("Edito");
+      expect($("a.save")).toHaveText("Le save");
 		});
 		
 	});
 
 	describe("Callbacks", function() {
 
-		it("should execute the callback code", function() {
-			var testVar = "foo"
-			$table.edittr({
-				onEdit: function() {
-					testVar = "bar"
-				}
-			});
-			expect(testVar).toEqual("bar");
+    beforeEach(function() {
+      loadFixtures("form.html");
+      $table = $("#edit-panel");
+    });
+
+    it("should execute the onEdit callback", function() {
+      var testVar = "before";
+      $table.edittr({
+        onEdit: function() {
+          testVar = "after";
+        }
+      });
+      $('a.edit').click();
+			expect(testVar).toEqual("after");
 		});
-		
+
+		it("should execute the onSave callback", function() {
+      var testVar = "before";
+      $table.edittr({
+        onSave: function() {
+          testVar = "after";
+        }
+      });
+      $('a.edit').click();
+      $('a.save').click();
+			expect(testVar).toEqual("after");
+		});
+
+		it("should execute the onCancel callback", function() {
+      var testVar = "before";
+      $table.edittr({
+        onCancel: function() {
+          testVar = "after";
+        }
+      });
+      $('a.edit').click();
+      $('a.cancel').click();
+			expect(testVar).toEqual("after");
+		});
+
 	});
 
 });
