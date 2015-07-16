@@ -42,6 +42,10 @@ $('#my-table').edittr({
 * Basic functionality
 * Broken, FPO tests
 
+### Version 0.0.2: Patio 
+
+* Expand Jasmine tests
+
 ##Contributing
 
 1. Fork it
