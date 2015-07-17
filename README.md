@@ -19,7 +19,11 @@ While in editing mode, your table has an `editing` class.
 
 You can provide text for the Edit, Save and Cancel links by passing in those values as options during initialization:
 ```
-$('#my-table').edittr({editText:'Edito',saveText:'Savio',cancelText:'Fin'});
+$('#my-table').edittr({
+  editText:'Edito',
+  saveText:'Savio',
+  cancelText:'Fin'
+});
 ```
 Defaults are "Edit", "Save" and "Cancel".
 
