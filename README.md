@@ -6,8 +6,8 @@ Minified version size: ~2kb
 
 ##Basic usage
 
-1. Include jquery.edittr.css with your other CSS files.
-2. Each table row must have a cell with an "edit" class. This will house the function links and can appear anywhere in the row.
+1. Include `jquery.edittr.css` with your other CSS files.
+2. Each table row must have a cell with an `edit` class. This will house the function links and can appear anywhere in the row.
 3. Call jquery.edittr on the table (or the table's wrapper) that you want to be able to edit: `$('#my-table').edittr();`
 4. Every cell within that table with a class of `editable` will now allow its contents to be edited.
 
