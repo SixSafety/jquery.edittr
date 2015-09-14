@@ -50,6 +50,10 @@ $('#my-table').edittr({
 
 * Fix and expand Jasmine tests
 
+### Version 0.0.3: Raincoat
+
+* Slight performance improvement
+
 ##Contributing
 
 1. Fork it
