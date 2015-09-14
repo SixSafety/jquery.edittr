@@ -6,7 +6,7 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  * 
- * Version 0.0.1
+ * Version 0.0.3
  * Made in Canada
  */
 ;(function ( $ ) {
@@ -41,7 +41,7 @@
 		
 		// add edit cell to editable rows
 		$table.find('td.editable').each(function() {
-		  var edit_td = $(this).closest('tr').find('td.edit');
+		  var edit_td = $(this).parent().find('td.edit');
 			if(edit_td.length==1){
 				edit_td.html(
 					'<a aria-label="'+settings.editText+'" class="edit"><span>'+settings.editText+'</span></a>'+
