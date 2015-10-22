@@ -27,6 +27,15 @@ $('#my-table').edittr({
 ```
 Defaults are "Edit", "Save" and "Cancel".
 
+###Silent mode
+
+There are a few console messages to help ensure you're using the plugin properly. If you prefer, you can supress these messages:
+```
+$('#my-table').edittr({
+  silent:true
+});
+```
+
 ###Callbacks
 
 The Edit, Save and Cancel actions have their own callbacks: `onEdit`, `onSave` and `onCancel`.
@@ -53,6 +62,10 @@ $('#my-table').edittr({
 ### Version 0.0.3: Raincoat
 
 * Slight performance improvement
+
+### Version 0.1.0: Runway
+
+* Add silent option
 
 ##Contributing
 
