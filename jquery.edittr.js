@@ -6,7 +6,7 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  * 
- * Version 0.0.3
+ * Version 0.1.0
  * Made in Canada
  */
 ;(function ( $ ) {
@@ -17,12 +17,19 @@
 			cancelText: 'Cancel',
 			editText: 'Edit',
 			saveText: 'Save',
+      silent: false,
 			onCancel: function() {},
 			onEdit: function() {},
 			onSave: function() {}
 		}, arguments[0] || {});
 		
 		var $this = $(this);
+
+    function toConsole(msg){
+      if(settings.silent==false){
+        console.log(msg);
+      }
+    }
 		
 		// setup check
 		if($this.is('table')){
@@ -32,11 +39,11 @@
 		}
 		var $table = $(document).find('table.edittr');
 		if( $table.length==0 ){
-			console.log('jquery.edittr will not work without a table');
+      toConsole('jquery.edittr will not work without a table');
 		}
 		var editable = $table.find('td.editable').length>0;
 		if( editable == false ){
-			console.log('jquery.edittr requires at least one td element to have a class of "editable"');
+			toConsole('jquery.edittr requires at least one td element to have a class of "editable"');
 		}
 		
 		// add edit cell to editable rows
@@ -49,7 +56,7 @@
 					'<a aria-label="'+settings.cancelText+'" class="cancel"><span>'+settings.cancelText+'</span></a>'
 				);
 			}else{
-				console.log('jquery.edittr requires each editable row to contain one td with a class of "edit"');
+				toConsole('jquery.edittr requires each editable row to contain one td with a class of "edit"');
 			}
 		});
 		
