@@ -67,6 +67,10 @@ $('#my-table').edittr({
 
 * Add silent option
 
+### Version 0.1.1: Aldred
+
+* Use inline-block for buttons (was using just inline)
+
 ##Contributing
 
 1. Fork it
