@@ -6,7 +6,7 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  * 
- * Version 0.1.0
+ * Version 0.1.1
  * Made in Canada
  */
 ;(function ( $ ) {
@@ -69,9 +69,9 @@
 			});
 			// toggle the edit cell state
 			var $edit_td = $(this).closest('tr').find('td.edit');
-			$edit_td.find('a.cancel').css({'display':'inline'});
+			$edit_td.find('a.cancel').css({'display':'inline-block'});
 			$edit_td.find('a.edit').css({'display':'none'});
-			$edit_td.find('a.save').css({'display':'inline'});
+			$edit_td.find('a.save').css({'display':'inline-block'});
 			settings.onEdit.call(this);
 			e.preventDefault();
 		});
@@ -86,7 +86,7 @@
 			// toggle the edit cell state
 			var $edit_td = $(this).closest('tr').find('td.edit');
 			$edit_td.find('a.cancel').css({'display':'none'});
-			$edit_td.find('a.edit').css({'display':'inline'});
+			$edit_td.find('a.edit').css({'display':'inline-block'});
 			$edit_td.find('a.save').css({'display':'none'});
 			settings.onCancel.call(this);
 			e.preventDefault();
@@ -102,7 +102,7 @@
 			// toggle the edit cell state
 			var $edit_td = $(this).closest('tr').find('td.edit');
 			$edit_td.find('a.cancel').css({'display':'none'});
-			$edit_td.find('a.edit').css({'display':'inline'});
+			$edit_td.find('a.edit').css({'display':'inline-block'});
 			$edit_td.find('a.save').css({'display':'none'});
 			settings.onSave.call(this);
 			e.preventDefault();
