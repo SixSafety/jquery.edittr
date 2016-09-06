@@ -1,6 +1,6 @@
 #jquery.edittr
 
-jquery.edittr is a [jQuery](http://www.jquery.com/) plugin that adds editing functionality to table rows. A table row is given an additional cell with an "Edit" link. When clicked, "editable" cells in that row will change to input fields, allowing the editing of the content.
+jquery.edittr is a [jQuery](http://www.jquery.com/) plugin that adds editing functionality to table rows with plain-text content. A table row is given an additional cell with an "Edit" link. When clicked, "editable" cells in that row will change to input fields, allowing the editing of the content.
 
 Minified version size: ~2kb
 
