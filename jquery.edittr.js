@@ -6,7 +6,7 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  * 
- * Version 0.1.1
+ * Version 0.2.0
  * Made in Canada
  */
 ;(function ( $ ) {
@@ -65,7 +65,62 @@
 			$this.addClass('editing');
 			// make cell editable
 			$(this).closest('tr').find('td.editable').each(function(){
-				$(this).data('original',$(this).text()).html('<input type="text" value="'+$(this).text()+'">');
+        var $cell = $(this);
+        $cell.data('original',$(this).text());
+        var original = $(this).text();
+        // check for data type
+        if($(this).data('select')){
+          // select
+          $(this).html('<select>');
+          var $select = $(this).find('select');
+          // loop through data
+          var items = $(this).data('select');
+          if(!$.type(items)=='object'){
+            toConsole('The "data-select" attribute must be a valid JavaScript object: {"value1":"Label 1","value2":"Label 2","value3":"Label 3"}')
+          }
+          $.each(items, function(key,value){
+            if(value==original){
+              $select.append('<option value="'+key+'" selected="true">'+value+'</option>');
+            }else{
+              $select.append('<option value="'+key+'">'+value+'</option>');
+            }
+          });
+        }else if($(this).data('radio')){
+          // radio
+          $(this).html('<fieldset>');
+          var $group = $(this).find('fieldset');
+          // loop through data
+          var items = $(this).data('radio');
+          if(!$.type(items)=='object'){
+            toConsole('The "data-radio" attribute must be a valid JavaScript object: {"value1":"Label 1","value2":"Label 2","value3":"Label 3"}')
+          }
+          $.each(items, function(key,value){
+            if(value==original){
+              $group.append('<input type="radio" value="'+key+'" id="'+key+'" checked="true"><label for="'+key+'">'+value+'</label>');
+            }else{
+              $group.append('<input type="radio" value="'+key+'" id="'+key+'"><label for="'+key+'">'+value+'</label>');
+            }
+          });
+        }else if($(this).data('checkbox')){
+          // checkbox
+          $(this).html('<fieldset>');
+          var $group = $(this).find('fieldset');
+          // loop through data
+          var items = $(this).data('checkbox');
+          if(!$.type(items)=='object'){
+            toConsole('The "data-checkbox" attribute must be a valid JavaScript object: {"value1":"Label 1","value2":"Label 2","value3":"Label 3"}')
+          }
+          $.each(items, function(key,value){
+            if(value==original){
+              $group.append('<input type="checkbox" value="'+key+'" id="'+key+'" checked="true"><label for="'+key+'">'+value+'</label>');
+            }else{
+              $group.append('<input type="checkbox" value="'+key+'" id="'+key+'"><label for="'+key+'">'+value+'</label>');
+            }
+          });
+        }else{
+          // plain text
+          $(this).html('<input type="text" value="'+original+'">');
+        }
 			});
 			// toggle the edit cell state
 			var $edit_td = $(this).closest('tr').find('td.edit');
