@@ -96,13 +96,27 @@
           }
           $.each(items, function(key,value){
             if(value==original){
-              $group.append('<input type="radio" name="pokemon" value="'+key+'" id="'+key+'" checked="true"><label for="'+key+'">'+value+'</label>');
+              $group.append('<input type="radio" value="'+key+'" id="'+key+'" checked="true"><label for="'+key+'">'+value+'</label>');
             }else{
-              $group.append('<input type="radio" name="pokemon" value="'+key+'" id="'+key+'"><label for="'+key+'">'+value+'</label>');
+              $group.append('<input type="radio" value="'+key+'" id="'+key+'"><label for="'+key+'">'+value+'</label>');
             }
           });
         }else if($(this).data('checkbox')){
           // checkbox
+          $(this).html('<fieldset>');
+          var $group = $(this).find('fieldset');
+          // loop through data
+          var items = $(this).data('checkbox');
+          if(!$.type(items)=='object'){
+            toConsole('The "data-checkbox" attribute must be a valid JavaScript object: {"value1":"Label 1","value2":"Label 2","value3":"Label 3"}')
+          }
+          $.each(items, function(key,value){
+            if(value==original){
+              $group.append('<input type="checkbox" value="'+key+'" id="'+key+'" checked="true"><label for="'+key+'">'+value+'</label>');
+            }else{
+              $group.append('<input type="checkbox" value="'+key+'" id="'+key+'"><label for="'+key+'">'+value+'</label>');
+            }
+          });
         }else{
           // plain text
           $(this).html('<input type="text" value="'+original+'">');

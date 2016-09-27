@@ -27,6 +27,12 @@ describe("Table", function() {
     expect($("td.name input").val()).toBe("Stephen");
 	});
 
+	it("should have text content that is converted to a checkbox list", function() {
+    expect($("td.drinks")).toHaveText("Water");
+    $('a.edit').click();
+    expect($("td.drinks").find("input[checked=true]").val()).toBe("water");
+	});
+  
 	it("should have text content that is converted to a radio list", function() {
     expect($("td.gender")).toHaveText("Male");
     $('a.edit').click();
