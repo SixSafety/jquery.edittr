@@ -21,7 +21,27 @@ The `name` value would be converted to a text input element:
 
 ##Advanced usage
 
-### Select menus 
+### Checkboxes
+
+By adding a `data-checkbox` attribute, the `drinks` value would be converted to a set of checkboxes:
+```
+<tr>
+  <td class="drinks editable" data-checkbox='{"coffee":"Coffee","pop":"Pop","water":"Water"}'>Water</td>
+  <td class="edit"></td>
+</tr>
+```
+
+### Radio buttons
+
+By adding a `data-radio` attribute, the `gender` value would be converted to a set of radio buttons:
+```
+<tr>
+  <td class="gender editable" data-radio='{"female":"Female","male":"Male"}'>Male</td>
+  <td class="edit"></td>
+</tr>
+```
+
+### Select menu
 
 By adding a `data-select` attribute, the `handedness` value would be converted to a select menu:
 ```
@@ -73,21 +93,25 @@ $('#my-table').edittr({
 * Basic functionality
 * Broken, FPO tests
 
-### Version 0.0.2: Patio 
+### Version 0.0.2
 
 * Fix and expand Jasmine tests
 
-### Version 0.0.3: Raincoat
+### Version 0.0.3
 
 * Slight performance improvement
 
-### Version 0.1.0: Runway
+### Version 0.1.0
 
 * Add silent option
 
-### Version 0.1.1: Aldred
+### Version 0.1.1
 
 * Use inline-block for buttons (was using just inline)
+
+### Version 0.2.0
+
+* Add a couple of element types for edit mode: checkbox, radio, select menu
 
 ##Contributing
 
