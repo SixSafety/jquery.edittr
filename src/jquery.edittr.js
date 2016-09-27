@@ -65,7 +65,34 @@
 			$this.addClass('editing');
 			// make cell editable
 			$(this).closest('tr').find('td.editable').each(function(){
-				$(this).data('original',$(this).text()).html('<input type="text" value="'+$(this).text()+'">');
+        var $cell = $(this);
+        $cell.data('original',$(this).text());
+        var original = $(this).text();
+        // check for data type
+        if($(this).data('select')){
+          // select
+          $(this).html('<select>');
+          var $select = $(this).find('select');
+          // loop through data
+          var items = $(this).data('select');
+          if(!$.type(items)=='object'){
+            toConsole('The "data-select" attribute must be a valid JavaScript object: {"value1":"Label 1","value2":"Label 2","value3":"Label 3"}')
+          }
+          $.each(items, function(key,value){
+            if(value==original){
+              $select.append('<option value="'+key+'" selected="true">'+value+'</option>');
+            }else{
+              $select.append('<option value="'+key+'">'+value+'</option>');
+            }
+          });
+        }else if($(this).data('radio')){
+          // radio
+        }else if($(this).data('checkbox')){
+          // checkbox
+        }else{
+          // plain text
+          $(this).data('original',$(this).text()).html('<input type="text" value="'+$(this).text()+'">');
+        }
 			});
 			// toggle the edit cell state
 			var $edit_td = $(this).closest('tr').find('td.edit');

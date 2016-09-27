@@ -27,6 +27,12 @@ describe("Table", function() {
     expect($("td.name input").val()).toBe("Stephen");
 	});
 
+	it("should have text content that is converted to a select list", function() {
+    expect($("td.handedness")).toHaveText("Left");
+    $('a.edit').click();
+    expect($("td.handedness select").find("option[selected=true]").text()).toBe("Left");
+	});
+
   it("should show the Save and Cancel buttons only when in editing mode", function() {
     expect($("a.edit")).toBeVisible();
     $('a.edit').click();

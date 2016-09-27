@@ -1,6 +1,6 @@
 #jquery.edittr
 
-jquery.edittr is a [jQuery](http://www.jquery.com/) plugin that adds editing functionality to table rows with plain-text content. A table row is given an additional cell with an "Edit" link. When clicked, "editable" cells in that row will change to input fields, allowing the editing of the content.
+jquery.edittr is a [jQuery](http://www.jquery.com/) plugin that adds editing functionality to table rows. A table row is given an additional cell with an "Edit" link. When clicked, "editable" cells in that row will change to form elements, allowing the content to be edited.
 
 Minified version size: ~2kb
 
@@ -11,7 +11,25 @@ Minified version size: ~2kb
 3. Call jquery.edittr on the table (or the table's wrapper) that you want to be able to edit: `$('#my-table').edittr();`
 4. Every cell within that table with a class of `editable` will now allow its contents to be edited.
 
-While in editing mode, your table has an `editing` class.
+The `name` value would be converted to a text input element:
+```
+<tr>
+  <td class="name editable">Stephen</td>
+  <td class="edit"></td>
+</tr>
+```
+
+##Advanced usage
+
+### Select menus 
+
+By adding a `data-select` attribute, the `handedness` value would be converted to a select menu:
+```
+<tr>
+  <td class="handedness editable" data-select='{"left":"Left","right":"Right"}'>Left</td>
+  <td class="edit"></td>
+</tr>
+```
 
 ##Options
 
