@@ -2,7 +2,9 @@
 
 jquery.edittr is a [jQuery](http://www.jquery.com/) plugin that adds editing functionality to table rows. A table row is given an additional cell with an "Edit" link. When clicked, "editable" cells in that row will change to form elements, allowing the content to be edited.
 
-Minified version size: ~2kb
+In edit mode, table cell values can be converted into the following form element types: checkbox, radio button, select (drop-down) menu, and text input.
+
+Minified version size: ~4kb
 
 ##Basic usage
 
@@ -111,7 +113,7 @@ $('#my-table').edittr({
 
 ### Version 0.2.0
 
-* Add a couple of element types for edit mode: checkbox, radio, select menu
+* Add a few element types for edit mode: checkbox, radio, select menu
 
 ##Contributing
 
