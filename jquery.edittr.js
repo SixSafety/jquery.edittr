@@ -6,7 +6,7 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  * 
- * Version 0.2.0
+ * Version 0.2.1
  * Made in Canada
  */
 ;(function ( $ ) {
@@ -76,13 +76,13 @@
           // loop through data
           var items = $(this).data('select');
           if(!$.type(items)=='object'){
-            toConsole('The "data-select" attribute must be a valid JavaScript object: {"value1":"Label 1","value2":"Label 2","value3":"Label 3"}')
+            toConsole('The "data-select" attribute must be a valid JavaScript object: {"key1":"value1","key2":"value2","key3":"value3"}')
           }
           $.each(items, function(key,value){
-            if(value==original){
-              $select.append('<option value="'+key+'" selected="true">'+value+'</option>');
+            if(key==original){
+              $select.append('<option value="'+value+'" selected="true">'+key+'</option>');
             }else{
-              $select.append('<option value="'+key+'">'+value+'</option>');
+              $select.append('<option value="'+value+'">'+key+'</option>');
             }
           });
         }else if($(this).data('radio')){
@@ -92,13 +92,13 @@
           // loop through data
           var items = $(this).data('radio');
           if(!$.type(items)=='object'){
-            toConsole('The "data-radio" attribute must be a valid JavaScript object: {"value1":"Label 1","value2":"Label 2","value3":"Label 3"}')
+            toConsole('The "data-radio" attribute must be a valid JavaScript object: {"key1":"value1","key2":"value2","key3":"value3"}')
           }
           $.each(items, function(key,value){
-            if(value==original){
-              $group.append('<input type="radio" value="'+key+'" id="'+key+'" checked="true"><label for="'+key+'">'+value+'</label>');
+            if(key==original){
+              $group.append('<input type="radio" value="'+value+'" id="'+value+'" checked="true"><label for="'+value+'">'+key+'</label>');
             }else{
-              $group.append('<input type="radio" value="'+key+'" id="'+key+'"><label for="'+key+'">'+value+'</label>');
+              $group.append('<input type="radio" value="'+value+'" id="'+value+'"><label for="'+value+'">'+key+'</label>');
             }
           });
         }else if($(this).data('checkbox')){
@@ -108,13 +108,13 @@
           // loop through data
           var items = $(this).data('checkbox');
           if(!$.type(items)=='object'){
-            toConsole('The "data-checkbox" attribute must be a valid JavaScript object: {"value1":"Label 1","value2":"Label 2","value3":"Label 3"}')
+            toConsole('The "data-checkbox" attribute must be a valid JavaScript object: {"key1":"value1","key2":"value2","key3":"value3"}')
           }
           $.each(items, function(key,value){
-            if(value==original){
-              $group.append('<input type="checkbox" value="'+key+'" id="'+key+'" checked="true"><label for="'+key+'">'+value+'</label>');
+            if(key==original){
+              $group.append('<input type="checkbox" value="'+value+'" id="'+value+'" checked="true"><label for="'+value+'">'+key+'</label>');
             }else{
-              $group.append('<input type="checkbox" value="'+key+'" id="'+key+'"><label for="'+key+'">'+value+'</label>');
+              $group.append('<input type="checkbox" value="'+value+'" id="'+value+'"><label for="'+value+'">'+key+'</label>');
             }
           });
         }else{

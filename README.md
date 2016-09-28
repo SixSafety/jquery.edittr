@@ -117,6 +117,10 @@ $('#my-table').edittr({
 
 * Add a few element types for edit mode: checkbox, radio, select menu
 
+### Version 0.2.1
+
+* Bugfix: invert how key-value pairs are used to build form elements
+
 ##Contributing
 
 1. Fork it
