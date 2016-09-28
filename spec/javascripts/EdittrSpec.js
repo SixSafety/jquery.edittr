@@ -28,21 +28,21 @@ describe("Table", function() {
 	});
 
 	it("should have text content that is converted to a checkbox list", function() {
-    expect($("td.drinks")).toHaveText("Water");
+    expect($("td.drinks")).toHaveText("water");
     $('a.edit').click();
-    expect($("td.drinks").find("input[checked=true]").val()).toBe("water");
+    expect($("td.drinks").find("input[checked=true]").next().text()).toBe("water");
 	});
   
 	it("should have text content that is converted to a radio list", function() {
-    expect($("td.gender")).toHaveText("Male");
+    expect($("td.gender")).toHaveText("male");
     $('a.edit').click();
-    expect($("td.gender").find("input[checked=true]").val()).toBe("male");
+    expect($("td.gender").find("input[checked=true]").next().text()).toBe("male");
 	});
 
 	it("should have text content that is converted to a select list", function() {
-    expect($("td.handedness")).toHaveText("Left");
+    expect($("td.handedness")).toHaveText("left");
     $('a.edit').click();
-    expect($("td.handedness select").find("option[selected=true]").text()).toBe("Left");
+    expect($("td.handedness select").find("option[selected=true]").text()).toBe("left");
 	});
 
   it("should show the Save and Cancel buttons only when in editing mode", function() {
