@@ -30,7 +30,7 @@ The `name` value would be converted to a text input element:
 By adding a `data-checkbox` attribute, the `drinks` value would be converted to a set of checkboxes:
 ```
 <tr>
-  <td class="drinks editable" data-checkbox='{"coffee":"Coffee","pop":"Pop","water":"Water"}'>Water</td>
+  <td class="drinks editable" data-checkbox='{"coffee":0,"pop":1,"water":2}'>Water</td>
   <td class="edit"></td>
 </tr>
 ```
@@ -40,7 +40,7 @@ By adding a `data-checkbox` attribute, the `drinks` value would be converted to 
 By adding a `data-radio` attribute, the `gender` value would be converted to a set of radio buttons:
 ```
 <tr>
-  <td class="gender editable" data-radio='{"female":"Female","male":"Male"}'>Male</td>
+  <td class="gender editable" data-radio='{"female":0,"male":1}'>Male</td>
   <td class="edit"></td>
 </tr>
 ```
@@ -50,7 +50,7 @@ By adding a `data-radio` attribute, the `gender` value would be converted to a s
 By adding a `data-select` attribute, the `handedness` value would be converted to a select menu:
 ```
 <tr>
-  <td class="handedness editable" data-select='{"left":"Left","right":"Right"}'>Left</td>
+  <td class="handedness editable" data-select='{"left":0,"right":1}'>Left</td>
   <td class="edit"></td>
 </tr>
 ```
