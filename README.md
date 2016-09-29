@@ -121,6 +121,10 @@ $('#my-table').edittr({
 
 * Bugfix: invert how key-value pairs are used to build form elements
 
+### Version 0.2.2
+
+* Bugfix: on save, show new value from all element types
+
 ##Contributing
 
 1. Fork it

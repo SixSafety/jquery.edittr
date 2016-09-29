@@ -6,7 +6,7 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  * 
- * Version 0.2.1
+ * Version 0.2.2
  * Made in Canada
  */
 ;(function ( $ ) {
@@ -152,7 +152,8 @@
       $this.removeClass('editing');
       // take the cell out of edit mode with the new content
       $(this).closest('tr').find('td.editable').each(function(){
-        $(this).html($(this).find('input').val());
+        var newVal = ($(this).find('input[type="checkbox"]:checked').next().val()||$(this).find('input[type="radio"]:checked').next().val()||($(this).find('select option:selected').text())||($(this).find('input').val()));
+        $(this).html(newVal);
       });
       // toggle the edit cell state
       var $edit_td = $(this).closest('tr').find('td.edit');
