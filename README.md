@@ -55,6 +55,13 @@ By adding a `data-select` attribute, the `handedness` value would be converted t
 </tr>
 ```
 
+###Restore original values
+
+You can restore a table's original values by calling:
+```
+$.edittr.revert('#my-table');
+```
+
 ##Options
 
 ###I18n
@@ -76,13 +83,6 @@ There are a few console messages to help ensure you're using the plugin properly
 $('#my-table').edittr({
   silent:true
 });
-```
-
-###Restore original values
-
-You can restore a table's original values by calling:
-```
-$.edittr.revert('#my-table');
 ```
 
 ###Callbacks
