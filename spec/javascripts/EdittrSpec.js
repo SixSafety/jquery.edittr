@@ -65,7 +65,7 @@ describe("Options", function() {
       $table.edittr({cancelText:"Fuggedit",editText:"Edito",saveText:"Le save"});
     });
 
-		it("should custom values for cancelText, editText and saveText", function() {
+		it("should customize values for cancelText, editText and saveText", function() {
       expect($("a.cancel")).toHaveText("Fuggedit");
       expect($("a.edit")).toHaveText("Edito");
       expect($("a.save")).toHaveText("Le save");
@@ -116,5 +116,28 @@ describe("Options", function() {
 		});
 
 	});
+
+});
+
+describe("Features", function() {
+
+  describe("revert()", function() {
+
+    beforeEach(function() {
+      loadFixtures("form.html");
+      $table = $("#edit-panel");
+      $table.edittr();
+    });
+
+    it("should restore the table's original values", function() {
+      $('a.edit').click();
+      $("td.name input").val("Patrick");
+      $('a.save').click();
+      expect($("td.name")).toHaveText("Patrick");
+      $.edittr.revert($table);
+      expect($("td.name")).toHaveText("Stephen");
+    });
+
+  });
 
 });
