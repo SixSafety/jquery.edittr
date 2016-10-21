@@ -6,7 +6,7 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  * 
- * Version 0.2.2
+ * Version 0.3.2
  * Made in Canada
  */
 ;(function ( $ ) {
@@ -30,7 +30,7 @@
         console.log(msg);
       }
     }
-		
+	
     // setup check
     if($this.is('table')){
       $this.addClass('edittr');
@@ -163,6 +163,15 @@
       settings.onSave.call(this);
       e.preventDefault();
     });
+
+    // externally-accessible functions
+    $.edittr = {
+      revert: function(table){
+        $(table).find('td.editable').each(function(){
+          $(this).html($(this).data('original'));
+        });
+      }
+    }
 
     return this;
 

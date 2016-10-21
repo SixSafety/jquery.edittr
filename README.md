@@ -78,6 +78,13 @@ $('#my-table').edittr({
 });
 ```
 
+###Restore original values
+
+You can restore a table's original values by calling:
+```
+$.edittr.revert('#my-table');
+```
+
 ###Callbacks
 
 The Edit, Save and Cancel actions have their own callbacks: `onEdit`, `onSave` and `onCancel`.
@@ -124,6 +131,10 @@ $('#my-table').edittr({
 ### Version 0.2.2
 
 * Bugfix: on save, show new value from all element types
+
+### Version 0.3.2
+
+* Add revert feature to restore table's original values
 
 ##Contributing
 
